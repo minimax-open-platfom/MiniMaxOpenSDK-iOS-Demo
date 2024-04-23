@@ -1,0 +1,226 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.9 (swiftlang-5.9.0.128.108 clang-1500.0.40.1)
+// swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name MinimaxOpenVoiceCallSDK
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import AVFoundation
+import AdSupport
+import Alamofire
+import AppTrackingTransparency
+import Foundation
+import Moya
+import ObjectMapper
+import Swift
+import SwiftyJSON
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+import os.log
+import os
+@objc public class Context : ObjectiveC.NSObject {
+  public init(apiKey: Swift.String, groupId: Swift.String)
+  @objc deinit
+}
+public class AssistantParams : ObjectMapper.Mappable, Swift.Codable {
+  public var groupId: Swift.String?
+  public var apiKey: Swift.String?
+  public var params: MinimaxOpenVoiceCallSDK.AssistantSubParams?
+  required public init?(map: ObjectMapper.Map)
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+public class AssistantSubParams : ObjectMapper.Mappable, Swift.Codable {
+  public var model: Swift.String?
+  public var instructions: Swift.String?
+  public var name: Swift.String?
+  public var description: Swift.String?
+  public var tools: [MinimaxOpenVoiceCallSDK.AssistantTools]?
+  public var file_ids: [Swift.String]?
+  public var role_meta: MinimaxOpenVoiceCallSDK.AssistantRole?
+  public var t2a_option: MinimaxOpenVoiceCallSDK.AssistantT2aOption?
+  required public init?(map: ObjectMapper.Map)
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+public class AssistantTools : ObjectMapper.Mappable, Swift.Codable {
+  public var type: Swift.String?
+  required public init?(map: ObjectMapper.Map)
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+public class AssistantRole : ObjectMapper.Mappable, Swift.Codable {
+  public var user_name: Swift.String?
+  public var bot_name: Swift.String?
+  required public init?(map: ObjectMapper.Map)
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+public class AssistantT2aOption : ObjectMapper.Mappable, Swift.Codable {
+  public var model: Swift.String?
+  public var voice_id: Swift.String?
+  public var format: Swift.String?
+  required public init?(map: ObjectMapper.Map)
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+public class AssistantBean : ObjectMapper.Mappable {
+  public var id: Swift.String?
+  public var created_at: Swift.Int?
+  public var object: Swift.String?
+  public var status: Swift.String?
+  public var base_resp: MinimaxOpenVoiceCallSDK.BaseResp?
+  required public init?(map: ObjectMapper.Map)
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+public class Response : ObjectMapper.Mappable {
+  public var base_resp: MinimaxOpenVoiceCallSDK.BaseResp?
+  required public init?(map: ObjectMapper.Map)
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+public class BaseResp : ObjectMapper.Mappable {
+  public var status_code: Swift.Int?
+  public var status_msg: Swift.String?
+  required public init?(map: ObjectMapper.Map)
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class ThreadParams : ObjectMapper.Mappable, Swift.Codable {
+  required public init?(map: ObjectMapper.Map)
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers public class ThreadSubParams : ObjectMapper.Mappable, Swift.Codable {
+  required public init?(map: ObjectMapper.Map)
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+public class ThreadBean : ObjectMapper.Mappable {
+  public var id: Swift.String?
+  public var created_at: Swift.Int?
+  public var object: Swift.String?
+  public var base_resp: MinimaxOpenVoiceCallSDK.BaseResp?
+  public var metadata: [Swift.String : Swift.String]?
+  required public init?(map: ObjectMapper.Map)
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+public class StreamParams : ObjectMapper.Mappable, Swift.Codable {
+  public var groupId: Swift.String?
+  public var apiKey: Swift.String?
+  public var params: MinimaxOpenVoiceCallSDK.StreamSubParams?
+  required public init?(map: ObjectMapper.Map)
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+public class StreamSubParams : ObjectMapper.Mappable, Swift.Codable {
+  required public init?(map: ObjectMapper.Map)
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+public class Message : ObjectMapper.Mappable, Swift.Codable {
+  required public init?(map: ObjectMapper.Map)
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+public class CancelStreamParams : ObjectMapper.Mappable, Swift.Codable {
+  required public init?(map: ObjectMapper.Map)
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+public class CancelSubParams : ObjectMapper.Mappable, Swift.Codable {
+  required public init?(map: ObjectMapper.Map)
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+public protocol MNMVoiceCallPlayDelegate : ObjectiveC.NSObjectProtocol {
+  func audioMsgReceived()
+  func playStart()
+  func playEnd()
+}
+public protocol MNMVoiceCallRecordDeleagate : ObjectiveC.NSObjectProtocol {
+  func listenStart()
+  func recordStart()
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class MNMVoiceCallManager : ObjectiveC.NSObject {
+  public static let shareInstance: MinimaxOpenVoiceCallSDK.MNMVoiceCallManager
+  weak public var playDelegate: (any MinimaxOpenVoiceCallSDK.MNMVoiceCallPlayDelegate)?
+  weak public var recordDelegate: (any MinimaxOpenVoiceCallSDK.MNMVoiceCallRecordDeleagate)?
+  public func setupAudioInfo(context: MinimaxOpenVoiceCallSDK.Context, recordSampleRate: Swift.Int, vadVolume: Swift.Int = 55, vadTimeout: Swift.Int = 1500, vadMaxTime: Swift.Int = 60000) -> Swift.Bool
+  public func createAssistant(assistantParamsDic: [Swift.String : Any], _ completion: ((MinimaxOpenVoiceCallSDK.AssistantBean?) -> Swift.Void)?)
+  public func createThread(threadParamsDic: [Swift.String : Any], _ completion: ((MinimaxOpenVoiceCallSDK.ThreadBean?) -> Swift.Void)?)
+  public func startListen(completion: @escaping (MinimaxOpenVoiceCallSDK.RecordError?, Foundation.URL?) -> Swift.Void?)
+  public func stopListen() -> Foundation.URL?
+  public func sendMessage(streamParams: MinimaxOpenVoiceCallSDK.StreamParams, _ completion: (((any Swift.Error)?) -> Swift.Void)?)
+  public func cancelVoiceCallMsgAndStopPlay(threadId: Swift.String?, _ completion: ((MinimaxOpenVoiceCallSDK.Response?) -> Swift.Void)?)
+  public func release()
+  @objc deinit
+}
+public enum ErrorCode : Swift.Int {
+  case unknow
+  case networkNull
+  case networkNullClient
+  case networkError
+  case timeout
+  case RPMLimit
+  case authorizationFail
+  case balanceInsufficient
+  case internalError
+  case outputError
+  case TPMLimit
+  case formatError
+  case fileSizeExceeded
+  case contextInvalid
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public class ResponseError : Swift.Error {
+  final public let errorCode: Swift.Int
+  final public let errorMsg: Swift.String?
+  public init(_ errorCode: Swift.Int, _ errorMsg: Swift.String? = nil)
+  @objc deinit
+}
+public enum RecordError : Swift.String {
+  case tooShort
+  case saveFailure
+  case unknow
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+extension MinimaxOpenVoiceCallSDK.ErrorCode : Swift.Equatable {}
+extension MinimaxOpenVoiceCallSDK.ErrorCode : Swift.Hashable {}
+extension MinimaxOpenVoiceCallSDK.ErrorCode : Swift.RawRepresentable {}
+extension MinimaxOpenVoiceCallSDK.RecordError : Swift.Equatable {}
+extension MinimaxOpenVoiceCallSDK.RecordError : Swift.Hashable {}
+extension MinimaxOpenVoiceCallSDK.RecordError : Swift.RawRepresentable {}
