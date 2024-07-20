@@ -113,3 +113,58 @@ public protocol MNMVoiceCallRecordDeleagate: NSObjectProtocol {
     func recordStart()
 }
 ```
+# 常见问题
+1. SDK does not contain 'libarclite' at the path
+这个路径: 缺少文件, 那么进入这个路径进行查看
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/ 
+lib/
+
+
+
+我这个截图是修复后的内容, 报错的情况下没有arc文件夹,也没有libarclite_iphonesimulator.a文件,
+
+1、新建arc文件夹
+
+2、下载:https://github.com/diyxiaoshitou/Libarclite-Files-main中的libarclite_iphonesimulator.a
+
+3、将下载下来的文件粘贴
+
+到/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/arc下
+
+重新运行后将修复这个问题
+
+
+如果是真机调试运行会出现iPhone.a文件丢失
+libarclite_iphoneos.a
+
+1、新建arc文件夹
+
+2、下载:https://github.com/diyxiaoshitou/Libarclite-Files-main中的libarclite_iphoneos.a
+
+3、将下载下来的文件粘贴
+
+到/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/arc下
+
+重新运行后将修复这个问题
+ 
+
+
+# 常见问题
+
+1. [SDK does not contain 'libarclite' at the path](https://github.com/yuehuig/libarclite)
+2. [Sandbox: rsync.samba (13105) deny(1) file-write-create, Flutter failed to write to a file](https://stackoverflow.com/questions/76590131/error-while-build-ios-app-in-xcode-sandbox-rsync-samba-13105-deny1-file-w)
+3. clang: error: linker command failed with exit code 1 (use -v to see invocation)
+    ```
+    # 在podfile中添加
+    post_install do |installer|
+        installer.pods_project.targets.each do |target
+            target.build_configurations.each do |config|
+                config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
+            end
+        end
+    end
+    ```
+4. 如果模拟器无法运行 需替换[MiniMaxOpenSDK-iOS-VoiceCallFramework](https://github.com/minimax-open-platfom/MiniMaxOpenSDK-iOS-VoiceCallFramework)中的xcframework
+    
+
+
