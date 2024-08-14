@@ -99,6 +99,15 @@ public protocol MNMVoiceCallPlayDelegate: NSObjectProtocol {
     
     /// 语音结束播放
     func playEnd()
+    
+    /// 收到了语音识别文本
+    func onAsrTextReceived(asr: String)
+
+    /// 收到了语音回复的文本，分段输出，每次回调新增的文本
+    func onReplyTextReceived(reply: String)
+
+    /// 语音回复文本结束
+    func onReplyTextEnd()
 }
 ```
 
