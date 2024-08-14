@@ -1,0 +1,6 @@
+framework module VoiceActivityDetector {
+  umbrella header "VoiceActivityDetector-umbrella.h"
+
+  export *
+  module * { export * }
+}

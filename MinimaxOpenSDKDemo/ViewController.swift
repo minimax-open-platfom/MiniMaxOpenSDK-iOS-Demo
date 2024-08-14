@@ -159,6 +159,16 @@ class ViewController : UIViewController {
         return label
     }()
     
+    private lazy var asrLabel : UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 4
+        label.textAlignment = .center
+        label.textColor = UIColor.gray
+        label.text = ""
+        label.font = UIFont.boldSystemFont(ofSize: 11)
+        return label
+    }()
+    
     private var assisTextView: UITextField = {
         let textView = UITextField()
         textView.placeholder = "传入已有Assistant ID"
@@ -191,7 +201,8 @@ class ViewController : UIViewController {
         view.addSubview(cancelButton)
         
         view.addSubview(alertLabel)
-
+        view.addSubview(asrLabel)
+        
         groupIdLabel.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(20)
             make.top.equalToSuperview().offset(60)
@@ -268,6 +279,11 @@ class ViewController : UIViewController {
             make.top.equalTo(threadLabel.snp.bottom).offset(70)
             make.centerX.equalToSuperview()
             make.leading.trailing.equalToSuperview().inset(20)
+        }
+        asrLabel.snp.makeConstraints { make in
+            make.top.equalTo(alertLabel.snp.bottom).offset(30)
+            make.centerX.equalToSuperview()
+            make.leading.trailing.equalToSuperview().inset(10)
         }
     }
     
@@ -414,7 +430,7 @@ class ViewController : UIViewController {
                             "content":"\(hexString)"
                             ]
                         ],
-                        "model": "abab6-hailuo",
+                        "model": "abab6.5s-chat",
                         "t2a_option": [
                             "model": "speech-01",
                             "voice_id": "male-qn-qingse",
@@ -491,6 +507,18 @@ extension ViewController : MNMVoiceCallRecordDeleagate {
 
 
 extension ViewController : MNMVoiceCallPlayDelegate {
+    func onAsrTextReceived(asr: String) {
+        DispatchQueue.main.async {
+            self.asrLabel.text = asr
+        }
+    }
+    
+    func onReplyTextReceived(reply: String) {
+        DispatchQueue.main.async {
+            self.asrLabel.text = reply
+        }
+    }
+    
     func audioMsgReceived() {
         DispatchQueue.main.async {
             self.updateUI(button: nil, text: "音频开始接收......")
@@ -506,6 +534,12 @@ extension ViewController : MNMVoiceCallPlayDelegate {
     func playEnd() {
         DispatchQueue.main.async {
             self.updateUI(button: self.recordButton, text: "音频播放结束")
+        }
+    }
+    
+    func onReplyTextEnd() {
+        DispatchQueue.main.async {
+            self.asrLabel.text = "字幕结束"
         }
     }
 }

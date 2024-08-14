@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		040F548F2BD7160700EFAD55 /* MinimaxOpenVoiceCallSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 040F548E2BD7160700EFAD55 /* MinimaxOpenVoiceCallSDK.framework */; };
 		047C8DDD2BA326D700351C38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047C8DDC2BA326D700351C38 /* AppDelegate.swift */; };
 		047C8DDF2BA326D700351C38 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047C8DDE2BA326D700351C38 /* SceneDelegate.swift */; };
 		047C8DE12BA326D700351C38 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047C8DE02BA326D700351C38 /* ViewController.swift */; };
@@ -16,6 +15,7 @@
 		047C8DE92BA326D800351C38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 047C8DE72BA326D800351C38 /* LaunchScreen.storyboard */; };
 		047C8DF12BA327F600351C38 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047C8DF02BA327F600351C38 /* Constants.swift */; };
 		497E0C822AA1A8D06970F430 /* Pods_MinimaxOpenSDKDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 911EE970EFBA4450D5A35B4F /* Pods_MinimaxOpenSDKDemo.framework */; };
+		832260812C6B945700FC6421 /* MinimaxOpenVoiceCallSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 832260802C6B945700FC6421 /* MinimaxOpenVoiceCallSDK.xcframework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -32,7 +32,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		040F548E2BD7160700EFAD55 /* MinimaxOpenVoiceCallSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MinimaxOpenVoiceCallSDK.framework; sourceTree = "<group>"; };
 		047C8DD92BA326D700351C38 /* MinimaxOpenSDKDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MinimaxOpenSDKDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		047C8DDC2BA326D700351C38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		047C8DDE2BA326D700351C38 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +44,7 @@
 		047F65442BA5EAB600F70649 /* MinimaxOpenVoiceCallSDK */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = MinimaxOpenVoiceCallSDK; path = MinimaxOpenSDKDemo/MinimaxOpenVoiceCallSDK.framework/MinimaxOpenVoiceCallSDK; sourceTree = "<group>"; };
 		5D45D9FF3CB6EF69BB76396B /* Pods-MinimaxOpenSDKDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MinimaxOpenSDKDemo.release.xcconfig"; path = "Target Support Files/Pods-MinimaxOpenSDKDemo/Pods-MinimaxOpenSDKDemo.release.xcconfig"; sourceTree = "<group>"; };
 		5FA2F683E7D21BD6E2C829C8 /* Pods-MinimaxOpenSDKDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MinimaxOpenSDKDemo.debug.xcconfig"; path = "Target Support Files/Pods-MinimaxOpenSDKDemo/Pods-MinimaxOpenSDKDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		832260802C6B945700FC6421 /* MinimaxOpenVoiceCallSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = MinimaxOpenVoiceCallSDK.xcframework; sourceTree = "<group>"; };
 		911EE970EFBA4450D5A35B4F /* Pods_MinimaxOpenSDKDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MinimaxOpenSDKDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -53,8 +53,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				040F548F2BD7160700EFAD55 /* MinimaxOpenVoiceCallSDK.framework in Frameworks */,
 				497E0C822AA1A8D06970F430 /* Pods_MinimaxOpenSDKDemo.framework in Frameworks */,
+				832260812C6B945700FC6421 /* MinimaxOpenVoiceCallSDK.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,7 +82,7 @@
 		047C8DDB2BA326D700351C38 /* MinimaxOpenSDKDemo */ = {
 			isa = PBXGroup;
 			children = (
-				040F548E2BD7160700EFAD55 /* MinimaxOpenVoiceCallSDK.framework */,
+				832260802C6B945700FC6421 /* MinimaxOpenVoiceCallSDK.xcframework */,
 				047C8DDC2BA326D700351C38 /* AppDelegate.swift */,
 				047C8DDE2BA326D700351C38 /* SceneDelegate.swift */,
 				047C8DE02BA326D700351C38 /* ViewController.swift */,
